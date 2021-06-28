@@ -23,7 +23,7 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        withCredentials(credentials:'simran') {
+        withCredentials(credentialsId:'simran') {
     
 
 
