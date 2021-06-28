@@ -28,7 +28,7 @@ pipeline{
 
         sh 'terraform init'
         sh 'terraform plan'
-        sh 'terraform apply'
+        sh 'terraform apply -auto-approve'
        // echo "Owner of this stage is :${F_NAME} ${L_NAME}"
         //echo "Version: ${NEW_VERSION}"
         }
