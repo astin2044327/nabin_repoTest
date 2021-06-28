@@ -23,9 +23,7 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        withCredentials([string(credentialsId: 'ravi', variable: 'TOKEN')]) {
-         
-    
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'Simran', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
 
         sh 'terraform init'
