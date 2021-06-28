@@ -1,8 +1,6 @@
 pipeline{
   agent any
-  environment {
-    AWS_CREDENTIALS= credentials('simran')
-  }
+  
   
   /*environment{
     F_NAME= 'Ram'
@@ -25,12 +23,16 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        echo "passing aws credentials: ${simran}"
+        withAWS(credentials:'simran') {
+    
+
+
         sh 'terraform init'
         sh 'terraform plan'
         sh 'terraform apply'
        // echo "Owner of this stage is :${F_NAME} ${L_NAME}"
         //echo "Version: ${NEW_VERSION}"
+        }
       }
     }
     
