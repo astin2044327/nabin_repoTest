@@ -23,7 +23,7 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        withAWS(credentials:'simran') {
+        withCredentials(credentials:'simran') {
     
 
 
