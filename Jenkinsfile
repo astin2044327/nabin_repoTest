@@ -2,6 +2,7 @@ pipeline{
   agent any
   environment {
     AWS_CREDENTIALS= credentialsId('simran')
+  }
   
   /*environment{
     F_NAME= 'Ram'
