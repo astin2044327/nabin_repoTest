@@ -23,7 +23,7 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        withCredentials([string(credentialsId: 'simran', variable: 'TOKEN')]) {
+        withCredentials([string(credentialsId: 'ravi', variable: 'TOKEN')]) {
          
     
 
