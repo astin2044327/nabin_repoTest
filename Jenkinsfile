@@ -1,7 +1,7 @@
 pipeline{
   agent any
   environment {
-    AWS_CREDENTIALS= credentialsId('simran')
+    AWS_CREDENTIALS= credentials('simran')
   }
   
   /*environment{
@@ -25,7 +25,7 @@ pipeline{
       }*/
       steps{
         echo 'This is dev stage'
-        env.simran
+        echo "passing aws credentials: ${simran}"
         sh 'terraform init'
         sh 'terraform plan'
         sh 'terraform apply'
